@@ -1,0 +1,1 @@
+{"root":["./src/vite-env.d.ts","./src/business/utils/setaccesstoken.ts","./src/infrastructure/api/index.ts","./src/infrastructure/utils/getaccesstoken.ts","./src/presentation/shared/configs/rootconfig/index.ts","./src/app.tsx","./src/main.tsx"],"errors":true,"version":"5.6.3"}

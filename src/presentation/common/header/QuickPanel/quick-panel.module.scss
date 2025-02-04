@@ -1,0 +1,10 @@
+.icons_list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  .icons {
+    color: black;
+    font-size: 26px;
+    cursor: pointer;
+  }
+}

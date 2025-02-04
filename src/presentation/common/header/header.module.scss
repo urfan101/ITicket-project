@@ -1,0 +1,13 @@
+.header {
+  padding: 35px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    font-size: 26px;
+    color: black;
+    .logoSpan {
+      color: #FFDD00;
+    }
+  }
+}
