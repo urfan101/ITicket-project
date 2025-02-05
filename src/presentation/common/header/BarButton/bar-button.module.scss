@@ -1,0 +1,28 @@
+.barButton {
+  color: rgb(164, 164, 164);
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 30px;
+  display: none;
+}
+
+@media (max-width: 1255px) {
+  .barButton {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .barButton {
+    font-size: 30px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .barButton {
+    display: block;
+    font-size: 23px;
+  }
+}
+
+

@@ -1,20 +1,29 @@
-import NavigationButton from "@presentation/common/header/nav/NavigationButton";
+
 import styles from "./header.module.scss"
 import QuickPanel from "@presentation/common/header/QuickPanel/QuickPanel";
-import ProfileButton from "@presentation/common/header/ProfileButton/ProfileButton";
+import BarButton from "@presentation/common/header/BarButton/BarButton";
 import '@presentation/shared/global.scss'
+import Logo from "../shared/Logo/Logo";
+import HeaderNavigation from "@presentation/common/header/HeaderNavigation/HeaderNavigation";
+import { DialogTrigger } from "react-aria-components";
+import SideBar from "./SideBar/SideBar";
+
 
 
 function Header() {
   return (
-    <div className="container">
-      <nav className={styles.header}>
-        <h1 className={styles.logo}><span className={styles.logoSpan}>i</span>Nigga<span className={styles.logoSpan}>.az</span></h1>
-        <NavigationButton link="/home">All events</NavigationButton>
-        <QuickPanel></QuickPanel>
-        <ProfileButton></ProfileButton>
-      </nav>
-    </div>
+    <header>
+      <div className="container">
+        <div className={styles.header}>
+          <DialogTrigger>
+            <SideBar></SideBar>
+            <BarButton></BarButton></DialogTrigger>
+          <Logo></Logo>
+          <HeaderNavigation></HeaderNavigation>
+          <QuickPanel></QuickPanel>
+        </div>
+      </div>
+    </header>
   )
 }
 

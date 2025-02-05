@@ -1,9 +1,10 @@
 
-import Header from "../common/header/Header";
+
+import RegistrationForm from "../common/registration/registration-form/RegistrationForm";
 
 const HomePage = () => {
   return <main>
-    <Header></Header>
+    <RegistrationForm></RegistrationForm>
   </main>
 };
 

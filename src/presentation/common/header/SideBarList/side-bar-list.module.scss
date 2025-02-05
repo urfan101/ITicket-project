@@ -1,0 +1,13 @@
+.listDiv {
+  overflow-y: scroll;
+  margin: 20px 0px;
+  height: 90%;
+  .list {
+    font-size: 20px;
+    font-weight: 700;
+    li {
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+  }
+}

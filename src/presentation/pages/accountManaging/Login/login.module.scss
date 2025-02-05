@@ -1,0 +1,19 @@
+.LoginDiv {
+  width: 400px;
+  margin: 100px auto;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 30px;
+  .topText {
+    margin: 15px 0px;
+    font-size: 33px;
+    font-weight: 900;
+  }
+}
+
+
+@media (max-width:420px) {
+  .LoginDiv {
+    width: 300px;
+  }
+}

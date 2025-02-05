@@ -2,9 +2,62 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  color: black;
   .icons {
     color: black;
-    font-size: 26px;
+    font-size: 23px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    span {
+      font-size: 20px;
+      font-weight: 800;
+    }
   }
 }
+
+.profile {
+  background-color: #FFDD00;
+  color: black;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1255px) {
+  .icons_list .icons:nth-child(1) {
+    display: flex;
+    color: gray;
+  }
+  .icons_list .icons:nth-child(2) {
+    font-size: 23px;
+    color: gray;
+  }
+  .icons_list .icons:nth-child(3) {
+    font-size: 23px;
+    color: gray;
+  }
+}
+
+@media (max-width: 1024px) {
+  .icons_list .icons:nth-child(1) {
+    display: none;
+  }
+  .icons_list .icons:nth-child(2) {
+    display: none;
+  }
+  .icons_list .icons:nth-child(3) {
+    color: gray;
+    font-size: 18px;
+  }
+}
+
+
+

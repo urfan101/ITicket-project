@@ -1,6 +1,7 @@
 .button {
   color: black;
   position: relative; 
+  font-weight: 900;
 }
 
 .button:hover {
@@ -24,8 +25,11 @@
 }
 
 
-@media (max-width: 1200px) {
-  .button {
-    display: none;
-  }
-}
+// @media (max-width: 320px) {
+//   .button {
+//     display: none;
+//   }
+// }
+
+
+

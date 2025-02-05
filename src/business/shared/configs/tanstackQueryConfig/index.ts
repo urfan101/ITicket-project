@@ -9,7 +9,7 @@ const queryConfig: DefaultOptions = {
     refetchOnMount: false, // Не делать повторный запрос при монтировании компонента
   },
   mutations: {
-    retry: 1, // Повторять мутации только 1 раз при ошибке Emil gay
+    retry: 1, // Повторять мутации только 1 раз при ошибке 
   },
 };
 

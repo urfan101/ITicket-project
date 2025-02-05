@@ -1,0 +1,18 @@
+.searchForm {
+  position: relative;
+  width: 100%;
+  .icon{
+    position: absolute;
+    top: 25%;
+    left: 1.5%;
+    font-size: 18px;
+    color: rgb(201, 201, 201);
+  }
+}
+
+.search {
+  border: 0.5px solid rgb(201, 201, 201);
+  padding: 9px 9px 9px 30px;
+  width: 100%;
+  border-radius: 3px;
+}
