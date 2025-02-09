@@ -1,4 +1,4 @@
-import LoginForm from '../../../common/registration/login-form/LoginForm'
+import LoginForm from '@presentation/common/registration/login-form/LoginForm'
 import styles from './login.module.scss'
 
 function Login() {

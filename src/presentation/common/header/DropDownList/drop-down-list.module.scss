@@ -1,0 +1,11 @@
+.listDiv {
+  color: black;
+  .list {
+    font-size: 20px;
+    font-weight: 700;
+    li {
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+  }
+}

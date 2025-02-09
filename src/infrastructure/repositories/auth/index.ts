@@ -21,7 +21,7 @@ export const login = async (dto: LoginDTO) => {
 
 export const submitRegister = async (dto: SubmitRegisterDTO) => {
   return await http<void>({
-    url: '/auth/sumbit-registration',
+    url: '/auth/submit-registration',
     method: 'POST',
     data: dto,
   });

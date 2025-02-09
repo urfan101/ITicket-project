@@ -1,36 +1,32 @@
-import styles from './forget-password.module.scss'
-import { Form, Label, TextField } from "react-aria-components";
-import StInput, { InputError } from "../../StInput";
-import Button from '@presentation/common/registration/Button/Button'
-import useRegister from "@/business/services/auth/useRegistration";
-import { RegisterDTO } from "@/infrastructure/dto/auth";
+import styles from './forget-password.module.scss';
+import { Form } from "radix-ui";
+import { InputError } from "../../StInput";
+import Button from '@presentation/common/registration/Button/Button';
+import useForgetPassword from "@/business/services/auth/useForgetPassword"; 
+import { ForgetPasswordDTO } from "@/infrastructure/dto/auth"; 
 import { NavLink } from 'react-router-dom';
 
 function ForgetPasswordForm() {
-  const { form, register } = useRegister();
-  const handleSubmit = async (data: RegisterDTO) => {
-    await register(data)
-  }
-  return (
-    <>
-      <Form className={styles.forgetForm} onSubmit={form.handleSubmit(handleSubmit)}>
-        <TextField
-          name="email"
-          className={styles.forgetInput}
-          onChange={value => form.setValue('email', value)}
-          onBlur={() => form.trigger('email')}
-          ref={form.register('email').ref}
-        >
-          <Label className={styles.label}>E-pochta</Label>
-          <StInput />
-          <InputError>{form.formState.errors.email?.message}</InputError>
-        </TextField>
+  const { form, forgetPassword, isPending } = useForgetPassword(); 
 
-        <Button>Daxil Ol</Button>
-        <p>Parolu <NavLink className={styles.navLink} to='/login'>Xatirlayirsiniz?</NavLink></p>
-      </Form>
-    </>
-  )
+  const handleSubmit = async (data: ForgetPasswordDTO) => {
+    await forgetPassword(data); 
+  };
+
+  return (
+    <Form.Root className={styles.forgetForm} onSubmit={form.handleSubmit(handleSubmit)}>
+      <Form.Field name="email">
+        <div className={styles.forgetInput}>
+          <Form.Label className={styles.label}>E-pochta</Form.Label>
+          <input {...form.register("email")} />
+          <InputError>{form.formState.errors.email?.message}</InputError>
+        </div>
+      </Form.Field>
+
+      <Button>Daxil Ol</Button>
+      <p>Parolu <NavLink className={styles.navLink} to='/login'>Xatirlayirsiniz?</NavLink></p>
+    </Form.Root>
+  );
 }
 
-export default ForgetPasswordForm
+export default ForgetPasswordForm;

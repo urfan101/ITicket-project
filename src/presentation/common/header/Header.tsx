@@ -1,4 +1,3 @@
-
 import styles from "./header.module.scss"
 import QuickPanel from "@presentation/common/header/QuickPanel/QuickPanel";
 import BarButton from "@presentation/common/header/BarButton/BarButton";
@@ -7,7 +6,7 @@ import Logo from "../shared/Logo/Logo";
 import HeaderNavigation from "@presentation/common/header/HeaderNavigation/HeaderNavigation";
 import { DialogTrigger } from "react-aria-components";
 import SideBar from "./SideBar/SideBar";
-
+import DropDown from "./DropDown/DropDown";
 
 
 function Header() {
@@ -17,10 +16,14 @@ function Header() {
         <div className={styles.header}>
           <DialogTrigger>
             <SideBar></SideBar>
-            <BarButton></BarButton></DialogTrigger>
+            <BarButton></BarButton>
+          </DialogTrigger>
           <Logo></Logo>
           <HeaderNavigation></HeaderNavigation>
+          <DialogTrigger>
           <QuickPanel></QuickPanel>
+            <DropDown></DropDown>
+          </DialogTrigger>
         </div>
       </div>
     </header>

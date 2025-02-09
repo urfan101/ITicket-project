@@ -1,4 +1,4 @@
-import NavigationButton from "@presentation/common/header/nav/NavigationButton"
+import NavigationButton from "@/presentation/common/header/Navigation/NavigationButton"
 import styles from './Header-Navigation.module.scss'
 
 function HeaderNavigation() {

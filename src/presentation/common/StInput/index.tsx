@@ -29,7 +29,7 @@ type InputErrorProps = {
 };
 
 export const InputError: FC<InputErrorProps> = memo(({ children }) => {
-  return <span className="text-red-500 text-sm">{children}</span>;
+  return <span style={{color: "red"}}>{children}</span>;
 });
 
 export default memo(StInput);

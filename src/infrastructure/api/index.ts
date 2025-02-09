@@ -8,10 +8,13 @@ export const api = axios.create({
   timeout: 60000,
 });
 
+
 const DEFAULT_HEADERS = {
   'Content-Type': 'application/json',
 };
-
+interface ErrorResponse {
+  error: string;
+}
 api.interceptors.request.use(
   (
     config: InternalAxiosRequestConfig,
@@ -61,8 +64,12 @@ export const http = async <T, D = unknown>({
   } catch (e: unknown) {
     if (e instanceof AxiosError) {
       const error = e as AxiosError;
-
-      throw new HttpError(error.message, error.response?.status || 500);
+      if (error.response) {
+        const errorData = error.response.data as ErrorResponse;
+        throw new HttpError(errorData.error, error.response.status || 500);
+      }
+      
+      
     }
 
     throw new HttpError('Unexpected error', 500);
