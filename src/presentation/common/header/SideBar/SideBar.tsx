@@ -1,4 +1,4 @@
-import { Button, Dialog, Heading, Input, Label, Modal, ModalOverlay, TextField } from 'react-aria-components'
+import { Dialog, Modal, ModalOverlay } from 'react-aria-components'
 import styles from './side-bar.module.scss'
 import Logo from '../../shared/Logo/Logo'
 import Close from '../../shared/Close/Close'

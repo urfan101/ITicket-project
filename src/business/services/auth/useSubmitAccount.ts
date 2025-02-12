@@ -27,6 +27,7 @@ const useSubmitAccount = ({email, token}: UseSubmitAccountProps): UseSubmitAccou
     onSuccess: async () => {
       navigation("/login")
       showToasts("Все прошло успешено, пожалуйста войдите в него", "success")
+      await queryClient.invalidateQueries({ queryKey: ['users-me'] });
     },
     onError: (error: HttpError) => {
       navigation("/login")

@@ -1,3 +1,4 @@
+import { deleteAccessToken } from '@/business/utils/deleteAccessToken';
 import { HttpError } from '@infrastructure/api/HttpError.ts';
 import { getAccessToken } from '@infrastructure/utils/getAccessToken.ts';
 import { stringify } from '@infrastructure/utils/stringify.ts';
@@ -65,10 +66,10 @@ export const http = async <T, D = unknown>({
     if (e instanceof AxiosError) {
       const error = e as AxiosError;
       if (error.response) {
+        error.response.status === 401 && deleteAccessToken(); 
         const errorData = error.response.data as ErrorResponse;
         throw new HttpError(errorData.error, error.response.status || 500);
       }
-      
       
     }
 

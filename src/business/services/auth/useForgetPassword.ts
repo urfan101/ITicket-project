@@ -2,7 +2,7 @@ import { showToasts } from "@/business/utils/showToasts";
 import { HttpError } from "@/infrastructure/api/HttpError";
 import { ForgetPasswordDTO } from "@/infrastructure/dto/auth";
 import { forgotPassword } from "@/infrastructure/repositories/auth";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm, UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ForgetPasswordSchema } from "@/business/validations/ForgetPasswordSchema";
@@ -15,6 +15,7 @@ type UseForgetPassword = {
 };
 
 const useForgetPassword = (): UseForgetPassword => {
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
 
   const form = useForm<ForgetPasswordDTO>({
@@ -26,9 +27,10 @@ const useForgetPassword = (): UseForgetPassword => {
 
   const { mutateAsync, isPending } = useMutation<void, HttpError, ForgetPasswordDTO>({
     mutationFn: forgotPassword,
-    onSuccess: () => {
+    onSuccess: async () => {
       navigate("/login");
       showToasts("Проверьте свою почту, ссылка для восстановления пароля отправлена", "success");
+      await queryClient.invalidateQueries({ queryKey: ['users-me'] });
     },
     onError: (error: HttpError) => {
       showToasts(error.message, "error");

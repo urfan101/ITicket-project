@@ -1,0 +1,38 @@
+.listDiv {
+  border-left: 1px solid gray;
+  color: black;
+  width: 30%;
+  padding: 0px 20px;
+  .list {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 30px 12px;
+    li {
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+.topText {
+  background-color: black;
+  color: white;
+  padding: 5px 17px;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 22px;
+}
+
+.exitButton {
+  display: flex;
+  span {
+    padding-left: 8px;
+    padding-top: 3px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .listDiv {
+    display: none;
+  }
+}

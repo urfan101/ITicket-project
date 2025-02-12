@@ -1,0 +1,25 @@
+.profileForm {
+  width: 70%;
+}
+
+.profileInput {
+  margin-bottom: 17px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 1024px) {
+  .profileForm {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
