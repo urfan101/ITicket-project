@@ -9,6 +9,8 @@ import ResetPassword from "@/presentation/pages/accountManaging/ResetPassword/Re
 import Profile from "@/presentation/pages/Profile/Profile";
 import AdminDashboard from "@/presentation/pages/admin/AdminDashboard/AdminDashboard";
 import { RouteObject } from "react-router-dom";
+import Categories from "@/presentation/pages/admin/Categories/Categories";
+import EditCategorie from "@/presentation/pages/admin/EditCategorie/EditCategorie";
 
 export enum AppRoutes {
   HOME = "main",
@@ -19,6 +21,8 @@ export enum AppRoutes {
   RESET_PASSWORD = "reset_password",
   PROFILE = "profile",
   ADMIN_DASHBOARD = "admin_dashboard",
+  ADMIN_CATEGORIES = "admin_categories",
+  ADMIN_EDIT_CATEGORIE = "admin_edit_categorie",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -30,6 +34,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.RESET_PASSWORD]: "/reset-password",
   [AppRoutes.PROFILE]: "/profile",
   [AppRoutes.ADMIN_DASHBOARD]: "/admin",
+  [AppRoutes.ADMIN_CATEGORIES]: "/categories",
+  [AppRoutes.ADMIN_EDIT_CATEGORIE]: "/editCategorie",
 };
 
 export const routeConfig: RouteObject[] = [
@@ -51,6 +57,8 @@ export const routeConfig: RouteObject[] = [
     element: <AdminLayout />,
     children: [
       { path: RoutePath.admin_dashboard, element: <AdminDashboard /> },
+      { path: "categories", element: <Categories /> },
+      { path: "editCategories/:categoryId", element: <EditCategorie /> },
     ],
   },
 ];

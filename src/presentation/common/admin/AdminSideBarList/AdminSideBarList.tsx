@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import styles from './admin-side-bar-list.module.scss'
 
 function AdminSideBarList() {
@@ -5,12 +6,7 @@ function AdminSideBarList() {
     <>
       <div className={styles.listDiv}>
         <ul className={styles.list}>
-          <li>Butun Tedbirler</li>
-          <li>Konsert</li>
-          <li>Tamasha</li>
-          <li>Ushaqlar</li>
-          <li>Idman</li>
-          <li>Heyal Kahvesi</li>
+          <li><NavLink to='categories'>Kategorialar</NavLink></li>
         </ul>
       </div>
     </>

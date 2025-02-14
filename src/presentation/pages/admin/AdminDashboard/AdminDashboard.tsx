@@ -7,6 +7,7 @@ function AdminDashboard() {
     <>
       <AuthorizedGuard></AuthorizedGuard>
       <AdminGuard></AdminGuard>
+      <h2 className={styles.topText}>Welcome Admin!</h2>
     </>
   )
 }
