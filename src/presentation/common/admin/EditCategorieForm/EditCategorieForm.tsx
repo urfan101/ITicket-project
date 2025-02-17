@@ -19,7 +19,7 @@ function EditCategoryForm({ categoryId }: CategoryFormProps) {
   const form = useForm<UpdateCategoryDTO>();
   const navigate = useNavigate();  
 
-  const category = categories?.data.find(cat => cat.id === categoryId);
+  const category = categories?.find(cat => cat.id === categoryId);
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error?.message}</div>;

@@ -11,6 +11,8 @@ import AdminDashboard from "@/presentation/pages/admin/AdminDashboard/AdminDashb
 import { RouteObject } from "react-router-dom";
 import Categories from "@/presentation/pages/admin/Categories/Categories";
 import EditCategorie from "@/presentation/pages/admin/EditCategorie/EditCategorie";
+import Venues from "@/presentation/pages/admin/Venues/Venues";
+import EditVenues from "@/presentation/pages/admin/EditVenues/EditVenue";
 
 export enum AppRoutes {
   HOME = "main",
@@ -23,6 +25,8 @@ export enum AppRoutes {
   ADMIN_DASHBOARD = "admin_dashboard",
   ADMIN_CATEGORIES = "admin_categories",
   ADMIN_EDIT_CATEGORIE = "admin_edit_categorie",
+  ADMIN_VENUES = "admin_venues",
+  ADMIN_EDIT_VENUE = "admin_edit_venue",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -36,6 +40,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ADMIN_DASHBOARD]: "/admin",
   [AppRoutes.ADMIN_CATEGORIES]: "/categories",
   [AppRoutes.ADMIN_EDIT_CATEGORIE]: "/editCategorie",
+  [AppRoutes.ADMIN_VENUES]: "/venues",
+  [AppRoutes.ADMIN_EDIT_VENUE]: "/editVenue",
 };
 
 export const routeConfig: RouteObject[] = [
@@ -59,6 +65,8 @@ export const routeConfig: RouteObject[] = [
       { path: RoutePath.admin_dashboard, element: <AdminDashboard /> },
       { path: "categories", element: <Categories /> },
       { path: "editCategories/:categoryId", element: <EditCategorie /> },
+      { path: "venues", element: <Venues /> },
+      { path: "editVenues/:venueId", element: <EditVenues /> },
     ],
   },
 ];

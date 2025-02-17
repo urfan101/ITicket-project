@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteCategory } from "@/infrastructure/repositories/categories";
 import styles from './categorie-delete-button.module.scss';
+import { CategoriesDTO } from "@/infrastructure/dto/categories";
 
 interface CategoryDeleteButtonProps {
   categoryId: string;
@@ -13,19 +14,17 @@ function CategoryDeleteButton({ categoryId }: CategoryDeleteButtonProps) {
     mutationFn: () => deleteCategory(categoryId),
     onMutate: async () => {
       await queryClient.cancelQueries({ queryKey: ['categories'] });
-
-      const previousCategories = queryClient.getQueryData(['categories']);
-
-      queryClient.setQueryData(['categories'], (oldData: any) => {
-        if (!oldData) return oldData;
-        return {
-          ...oldData,
-          data: oldData.data.filter((category: any) => category.id !== categoryId),
-        };
+    
+      const previousCategories = queryClient.getQueryData<CategoriesDTO[]>(['categories']);
+    
+      queryClient.setQueryData(['categories'], (oldData: CategoriesDTO[] | undefined) => {
+        if (!oldData) return [];
+        return oldData.filter((category) => category.id !== categoryId);
       });
-
+    
       return { previousCategories };
     },
+    
     onError: (_err, _variables, context) => {
       if (context?.previousCategories) {
         queryClient.setQueryData(['categories'], context.previousCategories);

@@ -1,12 +1,13 @@
 import { http } from "@/infrastructure/api";
-import { AddCategoriesDTO, CategoriesResponseDTO, UpdateCategoryDTO } from "@/infrastructure/dto/categories";
+import { AddCategoriesDTO, CategoriesDTO, UpdateCategoryDTO } from "@/infrastructure/dto/categories";
 
-export const getCategories = async (): Promise<CategoriesResponseDTO> => {
-  return await http<CategoriesResponseDTO>({
+export const getCategories = async (): Promise<CategoriesDTO[]> => {
+  return await http<CategoriesDTO[]>({
     url: "/categories",
     method: "GET",
   });
 };
+
 
 
 export const addCategory = async (dto: AddCategoriesDTO) => {

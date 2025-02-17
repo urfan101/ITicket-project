@@ -1,0 +1,31 @@
+.addVenueForm {
+  width: 100%;
+}
+
+.seatsContainer {
+  margin-top: 20px;
+}
+
+.seatsGrid {
+  display: grid;
+  
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.seatRow {
+  display: flex;
+  gap: 5px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button {
+  margin-top: 20px;
+}

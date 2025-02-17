@@ -7,7 +7,8 @@ function Navigation() {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error?.message}</div>;
 
-  const categories = data?.data || []; 
+  const categories = data || [];
+
 
   return (
     <nav>

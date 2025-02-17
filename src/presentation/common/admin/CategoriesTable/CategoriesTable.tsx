@@ -1,3 +1,4 @@
+import styles from './categories-table.module.scss'
 import { useNavigate } from "react-router-dom";
 import CategoryDeleteButton from "../CategorieDeleteButton/CategorieDeleteButton";
 import useGetCategories from "@/business/services/categories/useGetCategories";
@@ -9,12 +10,12 @@ function CategoriesTable() {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error?.message}</div>;
 
-  const categories = data?.data || [];
+  const categories = data || [];
 
   return (
     <>
-      <table>
-        <thead>
+      <table className={styles.table}>
+        <thead className={styles.td}>
           <tr>
             <th>ID</th>
             <th>Name</th>
@@ -22,7 +23,7 @@ function CategoriesTable() {
             <th>Delete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.th}>
           {categories.map((category) => (
             <tr key={category.id}>
               <td>{category.id}</td>
