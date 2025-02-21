@@ -13,9 +13,7 @@ const useEditVenue = () => {
     { venueId: string; data: UpdateVenueDTO }
   >({
     mutationFn: async ({ venueId, data }) => {
-      console.log("Sending request to update venue", { venueId, data });
       const response = await updateVenue(venueId, data);
-      console.log("Server response:", response);
       return response;
     },
     onSuccess: async () => {

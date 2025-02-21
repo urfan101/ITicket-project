@@ -13,6 +13,8 @@ import Categories from "@/presentation/pages/admin/Categories/Categories";
 import EditCategorie from "@/presentation/pages/admin/EditCategorie/EditCategorie";
 import Venues from "@/presentation/pages/admin/Venues/Venues";
 import EditVenues from "@/presentation/pages/admin/EditVenues/EditVenue";
+import Events from "@/presentation/pages/admin/Events/Events";
+import EditEvent from "@/presentation/pages/admin/EditEvents/EditEvents";
 
 export enum AppRoutes {
   HOME = "main",
@@ -27,6 +29,8 @@ export enum AppRoutes {
   ADMIN_EDIT_CATEGORIE = "admin_edit_categorie",
   ADMIN_VENUES = "admin_venues",
   ADMIN_EDIT_VENUE = "admin_edit_venue",
+  ADMIN_EVENTS = "admin_events",
+  ADMIN_EDIT_EVENT = "admin_edit_event",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -42,6 +46,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ADMIN_EDIT_CATEGORIE]: "/editCategorie",
   [AppRoutes.ADMIN_VENUES]: "/venues",
   [AppRoutes.ADMIN_EDIT_VENUE]: "/editVenue",
+  [AppRoutes.ADMIN_EVENTS]: "/events",
+  [AppRoutes.ADMIN_EDIT_EVENT]: "/editEvent",
 };
 
 export const routeConfig: RouteObject[] = [
@@ -67,6 +73,8 @@ export const routeConfig: RouteObject[] = [
       { path: "editCategories/:categoryId", element: <EditCategorie /> },
       { path: "venues", element: <Venues /> },
       { path: "editVenues/:venueId", element: <EditVenues /> },
+      { path: "events", element: <Events/>},
+      { path: "editEvents/:eventId", element: <EditEvent /> },
     ],
   },
 ];

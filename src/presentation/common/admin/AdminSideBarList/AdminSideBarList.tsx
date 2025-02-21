@@ -7,7 +7,8 @@ function AdminSideBarList() {
       <div className={styles.listDiv}>
         <ul className={styles.list}>
           <li><NavLink to='categories'>Kategorialar</NavLink></li>
-          <li><NavLink to='venues'>Eventler</NavLink></li>
+          <li><NavLink to='venues'>Venues</NavLink></li>
+          <li><NavLink to='events'>Events</NavLink></li>
         </ul>
       </div>
     </>

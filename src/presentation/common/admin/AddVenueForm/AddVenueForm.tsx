@@ -16,7 +16,7 @@ function AddVenueForm() {
   const [columns, setColumns] = useState<number>(5);
   const [isSeatsGridVisible, setIsSeatsGridVisible] = useState<boolean>(false);
 
-  // Функция для подсчета количества мест с type: 1
+
   const calculateSeatsCount = (seats: Array<Array<{ row: number; number: number; type: number }>>) => {
     return seats.flat().filter(seat => seat.type === 1).length;
   };
@@ -29,7 +29,7 @@ function AddVenueForm() {
     const seatsCount = calculateSeatsCount(seats);
 
     const newVenue: VenueDTO = {
-      id: "new", // Здесь может быть логика для уникального ID
+      id: "new", 
       name: venueName,
       description: venueDescription,
       address: venueAddress,
@@ -54,7 +54,7 @@ function AddVenueForm() {
 
   const renderSeat = (row: number, number: number) => {
     const seat = seats[row]?.[number];
-    if (!seat) return null; // защита от ошибок, если seat не существует
+    if (!seat) return null; 
     return (
       <div
         key={`seat-${row}-${number}`}
