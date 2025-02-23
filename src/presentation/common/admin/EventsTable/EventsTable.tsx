@@ -34,7 +34,7 @@ function EventsTable() {
               <td>{event.name}</td>
               <td>{event.availableTicketsCount}</td>
               <td>
-                <button onClick={() => navigate(`/admin/editEvents/${event.id}`)}>
+                <button className={styles.editButton} onClick={() => navigate(`/admin/editEvents/${event.id}`)}>
                   Edit
                 </button>
               </td>

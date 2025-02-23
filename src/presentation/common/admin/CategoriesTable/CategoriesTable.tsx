@@ -29,7 +29,7 @@ function CategoriesTable() {
               <td>{category.id}</td>
               <td>{category.name}</td>
               <td>
-                <button onClick={() => navigate(`/admin/editCategories/${category.id}`)}>
+                <button className={styles.editButton} onClick={() => navigate(`/admin/editCategories/${category.id}`)}>
                   Edit
                 </button>
               </td>

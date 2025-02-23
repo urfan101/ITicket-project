@@ -105,10 +105,11 @@ function AddEventForm() {
 
   return (
     <Form.Root className={styles.addEventForm} onSubmit={handleSubmit}>
+      <h2 className={styles.topText}>Admin Events</h2>
       <Form.Field name="name">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>Event Name</Form.Label>
-          <input type="text" value={eventName} onChange={(e) => setEventName(e.target.value)} placeholder="Event Name" />
+          <input type="text" className={styles.input} value={eventName} onChange={(e) => setEventName(e.target.value)} placeholder="Event Name" />
           <InputError>{error?.message}</InputError>
         </div>
       </Form.Field>
@@ -116,7 +117,7 @@ function AddEventForm() {
       <Form.Field name="description">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>Description</Form.Label>
-          <textarea value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} placeholder="Event Description" rows={4} />
+          <textarea className={styles.textarea} value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} placeholder="Event Description" rows={4} />
           <InputError>{error?.message}</InputError>
         </div>
       </Form.Field>
@@ -124,42 +125,42 @@ function AddEventForm() {
       <Form.Field name="startDate">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>Start Date</Form.Label>
-          <input type="datetime-local" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+          <input type="datetime-local" className={styles.input} value={startDate} onChange={(e) => setStartDate(e.target.value)} />
         </div>
       </Form.Field>
 
       <Form.Field name="endDate">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>End Date</Form.Label>
-          <input type="datetime-local" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+          <input type="datetime-local" className={styles.input} value={endDate} onChange={(e) => setEndDate(e.target.value)} />
         </div>
       </Form.Field>
 
       <Form.Field name="availableTicketsCount">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>Available Tickets</Form.Label>
-          <input type="number" value={availableTicketsCount} onChange={(e) => setAvailableTicketsCount(Number(e.target.value))} />
+          <input type="number" className={styles.input} value={availableTicketsCount} onChange={(e) => setAvailableTicketsCount(Number(e.target.value))} />
         </div>
       </Form.Field>
 
       <Form.Field name="price">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>Price</Form.Label>
-          <input type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))} />
+          <input type="number" className={styles.input} value={price} onChange={(e) => setPrice(Number(e.target.value))} />
         </div>
       </Form.Field>
 
       <Form.Field name="primaryImage">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>Primary Image URL</Form.Label>
-          <input type="text" value={primaryImage} onChange={(e) => setPrimaryImage(e.target.value)} />
+          <input type="text" className={styles.input} value={primaryImage} onChange={(e) => setPrimaryImage(e.target.value)} />
         </div>
       </Form.Field>
 
       <Form.Field name="primaryImageName">
         <div className={styles.inputWrapper}>
           <Form.Label className={styles.label}>Primary Image Name</Form.Label>
-          <input type="text" value={primaryImageName} onChange={(e) => setPrimaryImageName(e.target.value)} />
+          <input type="text" className={styles.input} value={primaryImageName} onChange={(e) => setPrimaryImageName(e.target.value)} />
         </div>
       </Form.Field>
 
@@ -169,12 +170,14 @@ function AddEventForm() {
           {secondaryImages.map((image, index) => (
             <div key={index}>
               <input
+              className={styles.input}
                 type="text"
                 value={image}
                 onChange={(e) => handleSecondaryImageChange(index, e.target.value)}
                 placeholder="Secondary Image URL"
               />
               <input
+              className={styles.input}
                 type="text"
                 value={secondaryImagesNames[index]}
                 onChange={(e) => handleSecondaryImageNameChange(index, e.target.value)}

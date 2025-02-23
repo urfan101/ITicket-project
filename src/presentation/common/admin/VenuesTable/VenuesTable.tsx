@@ -31,7 +31,7 @@ function VenuesTable() {
               <td>{venue.address}</td>
               <td>{venue.seatsCount}</td>
               <td>
-                <button onClick={() => navigate(`/admin/editVenues/${venue.id}`)}>
+                <button className={styles.editButton} onClick={() => navigate(`/admin/editVenues/${venue.id}`)}>
                   Edit
                 </button>
               </td>

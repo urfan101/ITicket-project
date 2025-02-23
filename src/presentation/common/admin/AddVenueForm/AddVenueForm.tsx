@@ -98,14 +98,16 @@ function AddVenueForm() {
 
   return (
     <Form.Root className={styles.addVenueForm} onSubmit={handleSubmit}>
+      <h2 className={styles.topText}>Admin Venues</h2>
       <Form.Field name="name">
         <div className={styles.inputWrapper}>
-          <Form.Label className={styles.label}>Məkan adı</Form.Label>
+          <Form.Label className={styles.label}>Venue Name</Form.Label>
           <input
+          className={styles.input}
             type="text"
             value={venueName}
             onChange={(e) => setVenueName(e.target.value)}
-            placeholder="Yeni məkan adı"
+            placeholder="Venue Name"
           />
           <InputError>{error?.message}</InputError>
         </div>
@@ -113,11 +115,12 @@ function AddVenueForm() {
 
       <Form.Field name="description">
         <div className={styles.inputWrapper}>
-          <Form.Label className={styles.label}>Təsvir</Form.Label>
+          <Form.Label className={styles.label}>Description</Form.Label>
           <textarea
+          className={styles.textarea}
             value={venueDescription}
             onChange={(e) => setVenueDescription(e.target.value)}
-            placeholder="Məkanın təsviri"
+            placeholder="Venue Description"
             rows={4}
           />
           <InputError>{error?.message}</InputError>
@@ -126,12 +129,13 @@ function AddVenueForm() {
 
       <Form.Field name="address">
         <div className={styles.inputWrapper}>
-          <Form.Label className={styles.label}>Ünvan</Form.Label>
+          <Form.Label className={styles.label}>Address</Form.Label>
           <input
+          className={styles.input}
             type="text"
             value={venueAddress}
             onChange={(e) => setVenueAddress(e.target.value)}
-            placeholder="Məkan ünvanı"
+            placeholder="Venue Address"
           />
           <InputError>{error?.message}</InputError>
         </div>
@@ -139,19 +143,19 @@ function AddVenueForm() {
 
       <div className={styles.rowColumnControls}>
         <label>
-          Rəqəmli sətirlər:
-          <input type="number" value={rows} onChange={handleRowChange} min="1" />
+          Row Number
+          <input type="number" value={rows} onChange={handleRowChange} min="1" className={styles.input}/>
         </label>
 
         <label>
-          Rəqəmli yerlər:
-          <input type="number" value={columns} onChange={handleColumnChange} min="1" />
+          Column Number
+          <input type="number" value={columns} onChange={handleColumnChange} min="1" className={styles.input}/>
         </label>
       </div>
 
       <div className={styles.seatsContainer}>
-        <button type="button" onClick={toggleSeatsGridVisibility}>
-          Yeniden yarat
+        <button type="button" onClick={toggleSeatsGridVisibility} className={styles.seatsButton}>
+          Seats Edit
         </button>
 
         {isSeatsGridVisible && (
@@ -171,7 +175,7 @@ function AddVenueForm() {
       </div>
 
       <Button>
-        {isPending ? "Yüklənir..." : "Yeni Məkan Əlavə Et"}
+        {isPending ? "Loading..." : "Add Venue"}
       </Button>
     </Form.Root>
   );

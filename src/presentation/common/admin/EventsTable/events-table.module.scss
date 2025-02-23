@@ -2,12 +2,19 @@
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  background-color: white;
+  border: 1px solid black; 
+  margin-top: 100px;
 }
 
-.td, .th {
-  border: 1px solid #dddddd;
+th, td {
+  border: 1px solid black; 
   text-align: left;
   padding: 8px;
+}
+
+tr {
+  border-bottom: 1px solid black; 
 }
 
 .image {
@@ -15,3 +22,11 @@
   width: 100px;
 }
 
+.editButton {
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}

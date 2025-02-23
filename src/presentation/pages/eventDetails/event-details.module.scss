@@ -1,0 +1,35 @@
+.mainDiv {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.image {
+  width: 45%;
+}
+
+.divUp {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+}
+
+.info {
+  padding: 30px;
+  width: 60%;
+}
+.eventName {
+  font-size: 50px;
+  font-weight: 900;
+}
+.eventInfo {
+  font-size: 29px;
+  font-weight: 500;
+}
+
+
+.divDown {
+  width: 100%;
+  padding: 35px;
+  color: gray;
+  font-size: 22px;
+}

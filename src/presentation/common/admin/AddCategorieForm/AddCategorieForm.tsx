@@ -29,21 +29,22 @@ function AddCategoryForm() {
 
   return (
     <Form.Root className={styles.addCategoryForm} onSubmit={handleSubmit}>
+      <h2 className={styles.topText}>Admin Categories</h2>
       <Form.Field name="name">
         <div className={styles.inputWrapper}>
-          <Form.Label className={styles.label}>Kategoriya adı</Form.Label>
+          <Form.Label className={styles.label}>Category Name</Form.Label>
           <input
             type="text"
             value={categoryName}
             onChange={(e) => setCategoryName(e.target.value)}
-            placeholder="Yeni kategoriya adı"
+            placeholder="Category Name"
           />
           <InputError>{error?.message}</InputError>
         </div>
       </Form.Field>
 
       <Button>
-        {isPending ? "Yüklənir..." : "Yeni Kategoriya Əlavə Et"}
+        {isPending ? "Loading..." : "Add Category"}
       </Button>
     </Form.Root>
   );

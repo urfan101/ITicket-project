@@ -8,7 +8,7 @@ import useGetCategories from "@/business/services/categories/useGetCategories";
 import { UpdateEventDTO } from "@/infrastructure/dto/events";
 import { InputError } from "../../StInput";
 import styles from "./edit-events-form.module.scss";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface EditEventFormProps {
   eventId: string;
@@ -83,7 +83,6 @@ function EditEventForm({ eventId }: EditEventFormProps) {
       categoryId,
     };
   
-    console.log("Updating event with:", { eventId, updatedEventData });
   
     await updateEvent({
       eventId,

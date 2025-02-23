@@ -15,6 +15,8 @@ import Venues from "@/presentation/pages/admin/Venues/Venues";
 import EditVenues from "@/presentation/pages/admin/EditVenues/EditVenue";
 import Events from "@/presentation/pages/admin/Events/Events";
 import EditEvent from "@/presentation/pages/admin/EditEvents/EditEvents";
+import Basket from "@/presentation/pages/basket/Basket";
+import EventDetails from "@/presentation/pages/eventDetails/EventDetails";
 
 export enum AppRoutes {
   HOME = "main",
@@ -24,6 +26,8 @@ export enum AppRoutes {
   CONFIRM_ACCOUNT = "confirm_account",
   RESET_PASSWORD = "reset_password",
   PROFILE = "profile",
+  BASKET = "basket",
+  EVENT_DETAILS = "event_details",
   ADMIN_DASHBOARD = "admin_dashboard",
   ADMIN_CATEGORIES = "admin_categories",
   ADMIN_EDIT_CATEGORIE = "admin_edit_categorie",
@@ -41,6 +45,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.CONFIRM_ACCOUNT]: "/confirm-email",
   [AppRoutes.RESET_PASSWORD]: "/reset-password",
   [AppRoutes.PROFILE]: "/profile",
+  [AppRoutes.BASKET]: "/basket",
+  [AppRoutes.EVENT_DETAILS]: "/eventDetails/:eventId",
   [AppRoutes.ADMIN_DASHBOARD]: "/admin",
   [AppRoutes.ADMIN_CATEGORIES]: "/categories",
   [AppRoutes.ADMIN_EDIT_CATEGORIE]: "/editCategorie",
@@ -62,6 +68,8 @@ export const routeConfig: RouteObject[] = [
       { path: RoutePath.confirm_account, element: <ConfirmPassword /> },
       { path: RoutePath.reset_password, element: <ResetPassword /> },
       { path: RoutePath.profile, element: <Profile /> }, 
+      { path: RoutePath.basket, element: <Basket /> },
+      { path: RoutePath.event_details, element: <EventDetails /> },
     ],
   },
   {
